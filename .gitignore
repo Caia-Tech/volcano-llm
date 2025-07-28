@@ -1,0 +1,105 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+volcano-llm
+volcano-llm-*
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+coverage.txt
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Temporal
+temporal-data/
+
+# Git sync repositories
+repos/*
+!repos/README.md
+
+# Build artifacts
+dist/
+build/
+bin/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+tmp/
+temp/
+temp-workflows/
+
+# Benchmark results
+benchmark*.txt
+
+# Database files
+*.db
+*.sqlite
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Secrets and keys
+*.pem
+*.key
+*.crt
+secrets/
+
+# Customer-specific branches (local testing)
+customer-*/
+
+# Python cache (for any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (for any frontend)
+node_modules/
+
+# Test outputs
+test-results/
+test-reports/
+
+# Performance profiles
+*.prof
+*.trace
+
+# Archives
+*.tar.gz
+*.zip
+
+# Local configuration overrides
+config.local.yaml
+volcano-local.yaml

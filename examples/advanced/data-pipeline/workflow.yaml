@@ -1,0 +1,67 @@
+name: CustomerDataPipeline
+version: 1.0.0
+description: Multi-stage data processing pipeline
+task_queue: volcano-data-pipelines
+max_duration: 2h
+retry_policy:
+  maximum_attempts: 3
+  initial_interval: 10s
+  backoff_coefficient: 2.0
+
+stages:
+  - name: extract
+    description: Extract data from multiple sources
+    activities:
+      - ExtractFromDatabase
+      - ExtractFromAPI
+      - ExtractFromFiles
+    parallel: true
+    timeout: 15m
+
+  - name: validate
+    description: Validate data quality and consistency
+    activities:
+      - CheckDataCompleteness
+      - ValidateBusinessRules
+      - DetectAnomalies
+    continue_on_error: false
+    timeout: 10m
+
+  - name: transform
+    description: Apply transformations and enrichments
+    activities:
+      - NormalizeData
+      - ApplyBusinessLogic
+      - EnrichWithMetadata
+    timeout: 20m
+
+  - name: load
+    description: Load data to destination systems
+    activities:
+      - LoadToDataWarehouse
+      - UpdateSearchIndex
+      - InvalidateCache
+    parallel: true
+    timeout: 15m
+
+  - name: notify
+    description: Send completion notifications
+    activities:
+      - SendEmailReport
+      - UpdateDashboard
+      - TriggerDownstreamJobs
+    timeout: 5m
+
+hooks:
+  on_start:
+    - LogPipelineStart
+    - CreateAuditRecord
+  
+  on_success:
+    - RecordMetrics
+    - CleanupTempData
+  
+  on_failure:
+    - SendAlertToOncall
+    - CreateIncidentTicket
+    - PreserveTempDataForDebug

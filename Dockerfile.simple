@@ -1,0 +1,24 @@
+# Simple Dockerfile for Volcano LLM
+FROM alpine:latest
+
+# Install ca-certificates
+RUN apk --no-cache add ca-certificates
+
+# Create app directory
+WORKDIR /app
+
+# Copy example files
+COPY . .
+
+# Create repos directory
+RUN mkdir -p /app/repos/tools /app/repos/workflows /app/repos/configs
+
+# Expose port
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
+
+# Entry point
+CMD ["echo", "Volcano LLM - The World's First Fluid Software Runtime"]
