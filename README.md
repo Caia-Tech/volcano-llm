@@ -4,8 +4,7 @@
 
 Volcano LLM is the world's first fluid software runtime that uses Git as its embedded runtime database. While others use Git for version control, we use it as the living, breathing heart of the application.
 
-If you would like a standardized package of the core of this technology for use with ANY type of project, simply download git and Temporal, or Kubernetes and Temporal to build your own implementation around your needs. The beauty is that they are both free and opensource software, but they aren't being used this way. Use This as an example of what's possible in systems with real LLMs and your modern codebases. You'll be able to modify your infrastructure and even software with declaritive text like Terraform. Also, you're be able to let APIs
-(Claude, Gemini, ChatGPT, Cohere etc). Learn the connection, then just use Git + Temporal.
+If you would like a standardized package of the core of this technology for use with ANY type of project, simply download git and Temporal, or Kubernetes and Temporal to build your own implementation around your needs. The beauty is that they are both free and opensource software, but they aren't being used in the typical way in this project. Use This as an example of what's possible in systems with real LLMs and your modern codebases. You'll be able to modify your infrastructure and even software with declaritive text like Terraform. Also, you'll be able to let APIs (Claude, Gemini, ChatGPT, Cohere etc) control your infrastructure and apps in real time. Learn the connection, then just use Git + Temporal.
 
 ## 🚀 What is Volcano LLM?
 
