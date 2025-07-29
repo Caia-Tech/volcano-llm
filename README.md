@@ -286,6 +286,33 @@ Volcano LLM represents a paradigm shift in how we think about software:
 - **No more downtime** - software that morphs in real-time
 - **No more "it works on my machine"** - Git branches for everything
 
+  Traditional rollback:
+  "PROD IS DOWN!"
+  *scrambles to find last working version*
+  *redeploy through CI/CD*
+  *pray database migrations work*
+  *20 minutes of downtime*
+  *gray hairs appear*
+
+  Volcano rollback:
+  "Something's wrong"
+  git revert HEAD
+  "Fixed. 0.1 seconds. Next?"
+
+  What exists today:
+  Git commit → Triggers CI/CD → Builds → Tests → Deploys →
+  Static artifact running
+
+  Volcano LLM:
+  Git commit → Reality changes → Software adapts → Still
+  running
+
+  The critical difference:
+  - Them: Git triggers deployment of NEW code
+  - Volcano LLM: Git IS the code, running NOW, in memory, highly configurable.
+ 
+  Rollbacks, Tracking, Auto-healing, Discover more
+
 ---
 
 **Created by**: Marvin Tutt, Chief Executive Officer, Caia Tech  
