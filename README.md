@@ -1,6 +1,6 @@
 When AI is trained to manage deterministic distributed systems at scale and not just lexicons of over 32,000 strings, efficiency will reach new levels. -Marvin
 
-# 🌋 Volcano LLM: The World's First Fluid Software Runtime
+# 🌋 Volcano LLM: The Fluid Software Runtime
 
 > **"Software that evolves with every git commit - no restarts, no downtime, infinite configurability"**
 
